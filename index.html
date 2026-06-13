@@ -34,8 +34,8 @@
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
-    <header>
-      <div class="navbar bg-[#BADEFF]/26 shadow-sm">
+    <header class="bg-[#BADEFF]/26">
+      <div class="navbar w-11/12 mx-auto">
         <div class="navbar-start">
           <div class="dropdown">
             <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -118,5 +118,25 @@
           <img src="assets//hero-student.png" alt="">
         </div>
      </section>
+
+     <!-- Lesson Section -->
+      <section class="w-11/12 mx-auto text-center">
+        <h3 class="text-3xl font-bold"><span class="text-sky-400">Let's</span> Learn Vocabularies</h3>
+        <div id="level-container" class="flex gap-5 flex-wrap justify-center my-7">
+          
+        </div>
+      </section>
+
+      <!-- Card Section -->
+       <div id="word-container" class="bg-gray-100 w-11/12 mx-auto p-15 rounded-xl mb-7 text-center grid grid-cols-3 gap-7">
+          <div class="text-center col-span-full">
+            <p class="text-gray-400 text-[10px]">আপনি এখনো কোন Lesson Select করেননি</p>
+          <p class="text-lg font-semibold mt-1">একটি Lesson Select করুন।</p>
+          </div>
+       </div>
+
+
+
+      <script src="script.js"></script>
   </body>
 </html>
