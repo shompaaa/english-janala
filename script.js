@@ -1,3 +1,9 @@
+function pronounceWord(word) {
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = "en-EN"; // English
+  window.speechSynthesis.speak(utterance);
+}
+
 const createElements = arr =>{
     const htmlElements = arr.map(el =>`<span class="btn">${el}</span>`)
     return (htmlElements.join(" "));
@@ -83,7 +89,7 @@ const displayLevelWorld = (words) => {
         <h3 class="text-xl bangla-font">${word.meaning ? word.meaning : "অর্থ পাওয়া যায়নি"} / ${word.pronunciation ? word.pronunciation : "Pronunciation পাওয়া যায়নি"}</h3>
         <div class="flex justify-between items-center mt-10">
           <button onclick="loadWordDetails(${word.id})" class="btn border-none bg-[#1A91FF]/10 hover:bg-[#1A91FF]/80 hover:text-white"><i class="fa-solid fa-circle-info"></i></button>
-          <button class="btn border-none bg-[#1A91FF]/10 hover:bg-[#1A91FF]/80 hover:text-white"><i class="fa-solid fa-volume-high"></i></button>
+          <button onclick=pronounceWord('${word.word}') class="btn border-none bg-[#1A91FF]/10 hover:bg-[#1A91FF]/80 hover:text-white"><i class="fa-solid fa-volume-high"></i></button>
         </div>
     </div>
   
@@ -127,7 +133,7 @@ loadLessons();
 
 document.getElementById('search-btn').addEventListener('click', ()=>{
   removeActive()
-  
+
   const input = document.getElementById('input-search')
   const searchValue  = input.value.trim().toLowerCase()
   
